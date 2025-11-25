@@ -17,3 +17,12 @@ class User(db.Model):
             "email": self.email,
             # do not serialize the password, its a security breach
         }
+
+class Character(db.Model):
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(String(120), nullable=False)
+    gender: Mapped[str] = mapped_column(String(120), nullable=False)
+    hair_color: Mapped[str] = mapped_column(String(120), nullable=False)
+
+
+class FavoriteCharacter
